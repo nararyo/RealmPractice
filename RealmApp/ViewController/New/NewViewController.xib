@@ -25,7 +25,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="section" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N6z-nX-SN1">
-                    <rect key="frame" x="20" y="223" width="374" height="34"/>
+                    <rect key="frame" x="20" y="223" width="334" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -41,20 +41,31 @@
                         <action selector="addMovieButton:" destination="-1" eventType="touchUpInside" id="Qlj-ch-AAB"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOW-rc-FgN">
+                    <rect key="frame" x="360" y="225.5" width="34" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button" backgroundImage="list.bullet" catalog="system"/>
+                    <connections>
+                        <action selector="selectSection:" destination="-1" eventType="touchUpInside" id="LdJ-W8-KXL"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="N6z-nX-SN1" firstAttribute="top" secondItem="MNP-Bg-PKG" secondAttribute="bottom" constant="60" id="3oa-r5-n6v"/>
                 <constraint firstItem="b9e-0r-xHm" firstAttribute="top" secondItem="N6z-nX-SN1" secondAttribute="bottom" constant="60" id="AaX-iZ-lZu"/>
                 <constraint firstItem="N6z-nX-SN1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="AvA-RB-QYV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N6z-nX-SN1" secondAttribute="trailing" constant="20" id="J63-1U-rzT"/>
                 <constraint firstItem="MNP-Bg-PKG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UAb-ED-RGR"/>
                 <constraint firstItem="b9e-0r-xHm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ye6-L7-ci0"/>
                 <constraint firstItem="MNP-Bg-PKG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="85" id="dL1-yk-6x2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N6z-nX-SN1" secondAttribute="trailing" constant="60" id="nNL-HX-FhX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MNP-Bg-PKG" secondAttribute="trailing" constant="20" id="tad-LC-0WM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="141.96428571428569"/>
         </view>
     </objects>
+    <resources>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+    </resources>
 </document>

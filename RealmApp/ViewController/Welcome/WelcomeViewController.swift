@@ -11,7 +11,7 @@ import RealmSwift
 
 class WelcomeViewController: UIViewController {
 
-    var sections: [Section] = []
+    var sections: Results<Section>?
     let realm = try! Realm()
     @IBOutlet weak var ListTableView: UITableView!
     
@@ -19,38 +19,19 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         print("hello")
         title = "Hello"
+        loadData()
         ListTableView.delegate = self
         ListTableView.dataSource = self
        
-        let section = Section(value: ["name": "Swift"])
-        let section2 = Section(value: ["name": "Xcode"])
-        sections.append(section)
-        sections.append(section2)
-        
-        do {
-            try realm.write{
-                realm.deleteAll()
-                
-                realm.add(section)
-                realm.add(section2)
-            }
-        }catch {
-            print(error)
-        }
         
       
 //        ListTableView.reloadData()
 //
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print(#function)
-        print(sections)
-        for element in sections[0].tasks {
-            print(element.name)
-        }
-        ListTableView.reloadData()
+        loadData()
         
     }
     
@@ -63,22 +44,22 @@ class WelcomeViewController: UIViewController {
 
 extension WelcomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].tasks.count
+        return sections?[section].tasks.count ?? 0
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = sections[indexPath.section].tasks[indexPath.row].name
+        cell.textLabel?.text = sections?[indexPath.section].tasks[indexPath.row].name
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].name
+        return sections?[section].name
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return sections?.count ?? 0
     }
 }
 
@@ -88,6 +69,10 @@ extension  WelcomeViewController: UITableViewDelegate {
 
 extension WelcomeViewController {
     
+    func loadData(){
+        sections = realm.objects(Section.self)
+        ListTableView.reloadData()
+    }
     //ファイルを一回全部消したい時に使用
     func deleteRealmfile(){
         let realmURL = Realm.Configuration.defaultConfiguration.fileURL!

@@ -22,14 +22,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtu-li-dqy">
-                    <rect key="frame" x="157.5" y="507" width="60" height="60"/>
-                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtu-li-dqy">
+                    <rect key="frame" x="157.5" y="507.5" width="60" height="59"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="5UK-5Y-Fw1"/>
                         <constraint firstAttribute="height" constant="60" id="PzY-ZC-ITD"/>
                     </constraints>
-                    <state key="normal" title="+">
+                    <state key="normal" backgroundImage="plus.circle" catalog="system">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -47,7 +46,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fqr-ug-dgH" secondAttribute="trailing" id="wKB-dP-MrT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="142"/>
+            <point key="canvasLocation" x="138.40000000000001" y="141.67916041979012"/>
         </view>
     </objects>
+    <resources>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
